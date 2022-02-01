@@ -26,9 +26,12 @@ namespace TaskManeger
                 .OrderBy(p => p.ProcessName)
                 .ToArray();
             PrcList.Items.Clear();
+            ListViewItem item;
             foreach (Process p in process)
             {
-                PrcList.Items.Add($"{p.ProcessName} - {p.Id}");
+                item = new ListViewItem(p.Id.ToString());
+                item.SubItems.Add(p.ProcessName);
+                PrcList.Items.Add(item);
             }
         }
 
@@ -41,7 +44,7 @@ namespace TaskManeger
         {
             try
             {
-                process[PrcList.SelectedIndex].Kill();
+                process[PrcList.FocusedItem.Index].Kill();
                 GetAllProcess();
             }
             catch (Exception ex)

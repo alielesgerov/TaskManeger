@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ColumnHeader PrcID;
             this.BtnStartPrc = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.blackListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BtnEndTask = new System.Windows.Forms.Button();
-            this.PrcList = new System.Windows.Forms.ListBox();
+            this.PrcList = new System.Windows.Forms.ListView();
+            this.PrcName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            PrcID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +71,7 @@
             // blackListToolStripMenuItem
             // 
             this.blackListToolStripMenuItem.Name = "blackListToolStripMenuItem";
-            this.blackListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.blackListToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.blackListToolStripMenuItem.Text = "Black List";
             this.blackListToolStripMenuItem.Click += new System.EventHandler(this.blackListToolStripMenuItem_Click);
             // 
@@ -84,11 +87,27 @@
             // 
             // PrcList
             // 
-            this.PrcList.FormattingEnabled = true;
+            this.PrcList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            PrcID,
+            this.PrcName});
+            this.PrcList.HideSelection = false;
             this.PrcList.Location = new System.Drawing.Point(13, 28);
             this.PrcList.Name = "PrcList";
-            this.PrcList.Size = new System.Drawing.Size(459, 368);
+            this.PrcList.Size = new System.Drawing.Size(459, 372);
             this.PrcList.TabIndex = 3;
+            this.PrcList.UseCompatibleStateImageBehavior = false;
+            this.PrcList.View = System.Windows.Forms.View.Details;
+            // 
+            // PrcName
+            // 
+            this.PrcName.DisplayIndex = 0;
+            this.PrcName.Text = "Name";
+            this.PrcName.Width = 250;
+            // 
+            // PrcID
+            // 
+            PrcID.DisplayIndex = 1;
+            PrcID.Text = "ID";
             // 
             // Form1
             // 
@@ -119,7 +138,8 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem blackListToolStripMenuItem;
         private System.Windows.Forms.Button BtnEndTask;
-        private System.Windows.Forms.ListBox PrcList;
+        private System.Windows.Forms.ListView PrcList;
+        private System.Windows.Forms.ColumnHeader PrcName;
     }
 }
 

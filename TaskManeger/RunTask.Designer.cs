@@ -53,6 +53,8 @@
             // 
             this.BtnRun.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnRun.Location = new System.Drawing.Point(355, 19);
+            this.BtnRun.MaximumSize = new System.Drawing.Size(75, 23);
+            this.BtnRun.MinimumSize = new System.Drawing.Size(75, 23);
             this.BtnRun.Name = "BtnRun";
             this.BtnRun.Size = new System.Drawing.Size(75, 23);
             this.BtnRun.TabIndex = 2;
@@ -68,6 +70,8 @@
             this.Controls.Add(this.BtnRun);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(459, 93);
+            this.MinimumSize = new System.Drawing.Size(459, 93);
             this.Name = "RunTask";
             this.Text = "RunTask";
             this.ResumeLayout(false);
